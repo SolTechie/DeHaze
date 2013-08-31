@@ -1,0 +1,11 @@
+I=imread('1','bmp');
+I=double(I);
+I=I/255;
+DarkChannel=GetDarkChannel(I);
+A=GetA(DarkChannel,I);
+T1=GetTransmission(DarkChannel,A);
+I2=Recovery(I,T1,A);
+figure;
+imshow(I);
+figure;
+imshow(I2);

@@ -1,0 +1,9 @@
+I=imread('toys','jpg');
+DarkChannel=GetDarkChannel(I);
+T1=GetTransmission(DarkChannel,245);
+T=Smoonth(I,T1);
+I2=Recovery(I,T,245);
+figure;
+imshow(I);
+figure;
+imshow(I2);
